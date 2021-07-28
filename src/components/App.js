@@ -62,17 +62,33 @@ function App() {
       </nav>
       <div className="container-fluid mt-5">
         <div className="row">
-          <main role="main" className="col-lg-12 d-flex text-center">
+          <main role="main" className="col-lg-12 d-flex text-left">
             <div className="content mr-auto ml-auto">
               <div>
                 <img src={daiLogo} width="150" height="150" className="mb-4" alt="" />
                 <h2>
-                  Dai price:{' '}
+                  Dai price in USD:{' '}
                   {ethLoading || daiLoading
                     ? 'Loading token data...'
                     : '$' +
                       // parse responses as floats and fix to 2 decimals
                       (parseFloat(daiPriceInEth) * parseFloat(ethPriceInUSD)).toFixed(2)}
+                </h2>
+                <h2>
+                  Dai price in Eth &nbsp; :{' '}
+                  {ethLoading || daiLoading
+                    ? 'Loading token data...'
+                    : ' ' +
+                    // parse responses as floats and fix to 2 decimals
+                    (parseFloat(daiPriceInEth))}
+                </h2>
+                <h2>
+                  Eth price in USD:{' '}
+                  {ethLoading || daiLoading
+                    ? 'Loading token data...'
+                    : '$' +
+                    // parse responses as floats and fix to 2 decimals
+                    (parseFloat(ethPriceInUSD))}
                 </h2>
                 <h2>
                   Dai total liquidity:{' '}
